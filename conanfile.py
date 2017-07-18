@@ -1,5 +1,6 @@
-from conans import ConanFile, CMake
-
+from conans import ConanFile
+from conans import tools
+import os, sys
 
 class ConanboostConan(ConanFile):
     description = "Configurable Boost 1.64 build"
