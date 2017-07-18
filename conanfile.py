@@ -14,7 +14,6 @@ class ConanboostConan(ConanFile):
     url = "https://github.com/dario-ramos/conan_boost/blob/master/conanfile.py"
     version = "1.64.0"
     FOLDER_NAME = "boost_%s" % version.replace(".", "_")
-    # The current python option requires the package to be built locally, to find default Python implementation
     options = {
         "shared": [True, False],
         "header_only": [True, False],
@@ -124,6 +123,7 @@ class ConanboostConan(ConanFile):
 
         cxx_flags = 'cxxflags="%s"' % " ".join(cxx_flags) if cxx_flags else ""
         flags.append(cxx_flags)
+        flags.append("--without-python")
 
         # JOIN ALL FLAGS
         b2_flags = " ".join(flags)
