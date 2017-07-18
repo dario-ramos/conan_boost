@@ -50,6 +50,7 @@ class ConanboostConan(ConanFile):
 
     default_options = "shared=False", \
         "header_only=False", \
+        "fPIC=True", \
         "python=True", \
         "without_atomic=False", \
         "without_chrono=False", \
