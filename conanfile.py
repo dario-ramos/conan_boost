@@ -68,7 +68,7 @@ class ConanboostConan(ConanFile):
         elif self.settings.compiler == "gcc":
             # For GCC we only need the major version otherwhise Boost doesn't find the compiler
             #flags.append("toolset=%s-%s"% (self.settings.compiler, self._gcc_short_version(self.settings.compiler.version)))
-            flags.append("toolset=%s-%s"% (self.settings.compiler, self.settings.compiler.version))
+            flags.append("toolset=gcc")
         elif str(self.settings.compiler) in ["clang"]:
             flags.append("toolset=%s-%s"% (self.settings.compiler, self.settings.compiler.version))
 
